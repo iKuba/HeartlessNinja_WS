@@ -1,6 +1,8 @@
 package com.your.mom.ws.ninja;
 
-public class Message {
+import java.io.Serializable;
+
+public class Message implements Serializable{
 	private boolean newGame = false;
 	private boolean joinGame = false;
 	private boolean gameEvent = false;

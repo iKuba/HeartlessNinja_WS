@@ -26,7 +26,7 @@ public class Game extends Thread {
 		while (true) {
 
 			// waiting for the last user to enter the game
-			while (users[users.length] == null)
+			while (users[users.length-1] == null)
 				;
 			twerking = true;
 			while (twerking) {
@@ -40,7 +40,7 @@ public class Game extends Thread {
 							
 						}
 						
-						if(true) //Temporary ready
+						if(true) 
 						{
 							out.writeUTF("READY");
 						}
@@ -56,11 +56,11 @@ public class Game extends Thread {
 	}
 
 	public boolean isGameFull() {
-		return (users.length == lastUser);
+		return (users.length-1 == lastUser);
 	}
 
 	public boolean addUser(User user) {
-		if (users.length == lastUser)
+		if (users.length-1 == lastUser)
 			return false;
 		user.setGameID(lastUser);
 		users[lastUser++] = user;
